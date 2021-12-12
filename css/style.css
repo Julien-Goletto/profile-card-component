@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+body{
+    display : flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    --width-desktop : 300px;
+    --height-desktop : var(--width-desktop);
+    --width-height-img : 80px;
+
+    --circle-radius : 400px;
+
+    background : top calc(0px - var(--circle-radius)/0.50) left calc(0px - var(--circle-radius)/0.60) / 100% no-repeat url(../images/bg-pattern-top.svg),
+                    bottom calc(0px - var(--circle-radius)/0.50) right calc(0px - var(--circle-radius)/.6) / 100% no-repeat url(../images/bg-pattern-bottom.svg),
+                        linear-gradient(hsl(185, 75%, 39%),
+                                        hsl(185, 75%, 39%));
+
+    font-family: 'Kumbh Sans', sans-serif;
+    font-weight:700;
+    font-size : 18px;
+}
+
+.card{
+    background-color: white;
+    width : var(--width-desktop);
+    height: var(--height-desktop);
+    border-radius: 10px;
+}
+
+.card__header{
+    background-image: url(../images/bg-pattern-card.svg);
+    height: calc(1/3*var(--height-desktop));
+    position : relative;
+    border-radius: 10px 10px 0 0;
+    
+}
+
+.card__profile-picture{
+    /*Taille de l'image*/
+    max-width : 100%;
+    width : var(--width-height-img);
+    height: auto;
+
+    /* Style de l'image */
+    border : 4px solid white;
+    border-radius: 100px;
+    
+    /* Positionnement de la photo */
+    position : absolute;
+    left : calc((var(--width-desktop) - var(--width-height-img))/2);
+    bottom: calc(0px - (var(--width-height-img)/2)); /*Gestion des négatifs à passer par une opération en spécifiant l'unité du 0 /!\*/
+}
+
+.card__main{
+    border-bottom: 1px solid hsla(0, 0%, 59%, 60%);
+    padding-bottom: 20px;
+}
+
+.main__name-age{
+    text-align: center;
+    padding-top: calc(var(--width-height-img)/2 + 10px);
+}
+
+.name-age--em{
+    color : hsl(0, 0%, 59%);
+    padding-left : 2px;
+    font-weight : 400;
+}
+
+.main__location{
+    text-align : center;
+    padding-top : 10px;
+    color : hsl(0, 0%, 59%);
+    font-weight : 400;
+    font-size : 0.9em;
+}
+
+.card__footer{
+    padding-top: 20px;
+    display : flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.footer__stats{
+    text-align: center;
+}
+
+.stat__name{
+    color : hsl(0, 0%, 59%);
+    font-weight: 400;
+    font-size : .7em;
+    padding-top: 5px;;
+}
